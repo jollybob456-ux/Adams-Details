@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adam's Details — Mobile Auto Detailing in Allen, TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #1c1c1e;
+    --bg-soft: #232325;
+    --card: #2a2a2d;
+    --paint-red: #b3382c;
+    --paint-red-light: #d14a3b;
+    --chrome: #9ca3af;
+    --cream: #f4f1ea;
+    --line: #38383b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3,.eyebrow{font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.04em;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(28,28,30,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    max-width:1100px; margin:0 auto; padding:16px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{font-family:'Oswald',sans-serif; font-weight:700; font-size:1.3rem; letter-spacing:0.05em;}
+  .brand span{color:var(--paint-red-light);}
+  .nav-links{display:flex; gap:28px; font-size:0.9rem; font-weight:500;}
+  .nav-links a{opacity:0.85; transition:opacity .2s, color .2s;}
+  .nav-links a:hover{opacity:1; color:var(--paint-red-light);}
+  .nav-call{
+    background:var(--paint-red); color:var(--cream); padding:9px 18px;
+    border-radius:3px; font-weight:600; font-size:0.88rem; white-space:nowrap;
+  }
+  .nav-call:hover{background:var(--paint-red-light);}
+  .menu-toggle{display:none; background:none; border:none; color:var(--cream); font-size:1.5rem; cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:100px 24px 90px;
+    text-align:center;
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(179,56,44,0.18), transparent 60%),
+      var(--bg);
+  }
+  .hero::before{
+    content:"";
+    position:absolute; top:0; left:-30%;
+    width:60%; height:100%;
+    background:linear-gradient(100deg, transparent, rgba(244,241,234,0.07), transparent);
+    transform:skewX(-15deg);
+    animation: shine 2.6s ease-in-out 0.3s 1;
+  }
+  @keyframes shine{
+    0%{ left:-40%; }
+    100%{ left:120%; }
+  }
+  .eyebrow{
+    color:var(--chrome); font-size:0.78rem; font-weight:600; letter-spacing:0.18em; margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.2rem);
+    font-weight:700;
+    line-height:1.05;
+    margin-bottom:18px;
+  }
+  .hero h1 em{ font-style:normal; color:var(--paint-red-light); }
+  .hero p.lead{
+    max-width:560px; margin:0 auto 36px; color:var(--chrome); font-size:1.05rem;
+  }
+  .cta-row{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:14px 30px; border-radius:3px; font-weight:600; font-size:0.95rem;
+    transition: transform .15s ease, background .2s;
+  }
+  .btn-primary{ background:var(--paint-red); color:var(--cream); }
+  .btn-primary:hover{ background:var(--paint-red-light); transform:translateY(-2px); }
+  .btn-ghost{ border:1px solid var(--chrome); color:var(--cream); }
+  .btn-ghost:hover{ border-color:var(--cream); transform:translateY(-2px); }
+
+  section{ padding:90px 24px; max-width:1100px; margin:0 auto; }
+  .section-head{ text-align:center; max-width:600px; margin:0 auto 56px; }
+  .section-head .eyebrow{ justify-content:center; }
+  .section-head h2{ font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:14px; }
+  .section-head p{ color:var(--chrome); }
+
+  /* SERVICES */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+  }
+  .plan{
+    background:var(--card); border:1px solid var(--line); border-radius:6px;
+    padding:36px 28px; position:relative; transition:transform .2s, border-color .2s;
+  }
+  .plan:hover{ transform:translateY(-6px); border-color:var(--paint-red); }
+  .plan.featured{ border-color:var(--paint-red); }
+  .plan .tag{
+    position:absolute; top:-12px; right:24px; background:var(--paint-red); color:var(--cream);
+    font-size:0.7rem; font-weight:700; letter-spacing:0.08em; padding:5px 10px; border-radius:3px;
+    text-transform:uppercase;
+  }
+  .plan h3{ font-size:1.3rem; margin-bottom:6px; }
+  .plan .price{ font-family:'Oswald',sans-serif; font-size:2rem; font-weight:600; color:var(--paint-red-light); margin:10px 0 18px;}
+  .plan .price small{ font-size:0.9rem; color:var(--chrome); font-weight:400; }
+  .plan ul{ list-style:none; }
+  .plan li{ padding:8px 0; border-top:1px solid var(--line); color:var(--chrome); font-size:0.92rem; }
+  .plan li:first-child{ border-top:none; }
+  .plan li::before{ content:"— "; color:var(--paint-red-light); }
+
+  /* GALLERY */
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+  }
+  .gallery-slot{
+    aspect-ratio:4/3; background:var(--card); border:1px dashed var(--line); border-radius:6px;
+    display:flex; align-items:center; justify-content:center; text-align:center; color:var(--chrome);
+    font-size:0.85rem; padding:20px;
+  }
+
+  /* SERVICE AREA */
+  .area-box{
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:8px;
+    padding:48px; display:flex; align-items:center; gap:40px; flex-wrap:wrap;
+  }
+  .pin{
+    width:64px; height:64px; flex-shrink:0; border-radius:50%; background:var(--paint-red);
+    display:flex; align-items:center; justify-content:center; font-size:1.6rem;
+  }
+  .area-box h3{ font-size:1.4rem; margin-bottom:8px; }
+  .area-box p{ color:var(--chrome); }
+
+  /* CONTACT */
+  .contact-wrap{
+    display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start;
+  }
+  .contact-info h3{ font-size:1.5rem; margin-bottom:16px; }
+  .contact-info p{ color:var(--chrome); margin-bottom:24px; }
+  .info-line{ display:flex; gap:14px; align-items:center; margin-bottom:18px; font-size:1.05rem; }
+  .info-line .ic{ color:var(--paint-red-light); font-weight:700; }
+  form{ display:flex; flex-direction:column; gap:14px; }
+  input, textarea{
+    background:var(--card); border:1px solid var(--line); color:var(--cream);
+    padding:13px 16px; border-radius:4px; font-family:inherit; font-size:0.95rem;
+  }
+  input:focus, textarea:focus{ outline:2px solid var(--paint-red-light); border-color:transparent; }
+  textarea{ resize:vertical; min-height:110px; }
+  .form-note{ font-size:0.8rem; color:var(--chrome); }
+
+  footer{
+    border-top:1px solid var(--line); padding:30px 24px; text-align:center;
+    color:var(--chrome); font-size:0.85rem;
+  }
+
+  @media (max-width: 800px){
+    .nav-links{ display:none; }
+    .services-grid, .gallery-grid{ grid-template-columns:1fr; }
+    .contact-wrap{ grid-template-columns:1fr; }
+    .area-box{ flex-direction:column; text-align:center; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .hero::before{ animation:none; }
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">ADAM'S <span>DETAILS</span></div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-call" href="tel:9452481256">Call (945) 248-1256</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Mobile Detailing · Allen, TX</div>
+  <h1>Your car,<br><em>showroom clean</em>, in your driveway.</h1>
+  <p class="lead">Adam's Details brings professional interior and exterior detailing straight to you. No drop-off, no waiting room — just a clean ride when we're done.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="tel:9452481256">Call to Book — (945) 248-1256</a>
+    <a class="btn btn-ghost" href="#services">See Services</a>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-head">
+    <div class="eyebrow">Pricing</div>
+    <h2>Detailing Packages</h2>
+    <p>Straightforward pricing. Add-ons available — ask when you call.</p>
+  </div>
+  <div class="services-grid">
+    <div class="plan">
+      <h3>Express Wash</h3>
+      <div class="price">$45 <small>/ starting</small></div>
+      <ul>
+        <li>Hand wash & dry</li>
+        <li>Wheels & tires cleaned</li>
+        <li>Windows in & out</li>
+        <li>Quick interior vacuum</li>
+      </ul>
+    </div>
+    <div class="plan featured">
+      <span class="tag">Most Popular</span>
+      <h3>Full Detail</h3>
+      <div class="price">$120 <small>/ starting</small></div>
+      <ul>
+        <li>Everything in Express Wash</li>
+        <li>Deep interior shampoo</li>
+        <li>Dash, console & door panel detail</li>
+        <li>Exterior wax / sealant</li>
+        <li>Leather conditioning</li>
+      </ul>
+    </div>
+    <div class="plan">
+      <h3>Ceramic Coating</h3>
+      <div class="price">$250 <small>/ starting</small></div>
+      <ul>
+        <li>Everything in Full Detail</li>
+        <li>Paint decontamination</li>
+        <li>Ceramic coating application</li>
+        <li>Long-lasting shine & protection</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="section-head">
+    <div class="eyebrow">Recent Work</div>
+    <h2>Before & After</h2>
+    <p>Photo gallery coming soon — placeholders below, ready for your shots.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-slot">Add a before/after photo here</div>
+    <div class="gallery-slot">Add a before/after photo here</div>
+    <div class="gallery-slot">Add a before/after photo here</div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="area-box">
+    <div class="pin">📍</div>
+    <div>
+      <h3>Proudly serving Allen, TX</h3>
+      <p>And surrounding areas. We come to your home or office — just tell us where to park.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-head">
+    <div class="eyebrow">Get In Touch</div>
+    <h2>Book Your Detail</h2>
+    <p>Call directly for the fastest response, or send a request below.</p>
+  </div>
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <h3>Contact</h3>
+      <p>Based in Allen, TX. Mobile service — we come to you.</p>
+      <div class="info-line"><span class="ic">☎</span> <a href="tel:9452481256">(945) 248-1256</a></div>
+      <div class="info-line"><span class="ic">📍</span> Allen, TX & surrounding area</div>
+    </div>
+    <div>
+      <form action="mailto:?subject=Detailing%20Request" method="get">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="text" name="vehicle" placeholder="Vehicle (make/model)">
+        <textarea name="message" placeholder="What do you need detailed?"></textarea>
+        <button class="btn btn-primary" type="submit">Send Request</button>
+        <p class="form-note">Business email isn't set up yet — for now, please call (945) 248-1256 to confirm your booking.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Adam's Details — Mobile Auto Detailing in Allen, TX
+</footer>
+
+</body>
+</html>
