@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adam's Details — Mobile Auto Detailing in Allen, TX</title>
+<link rel="icon" type="image/png" href="logo.png">
+<title>Joly Shine — Mobile Auto Detailing in Allen, TX</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -40,7 +41,8 @@
     max-width:1100px; margin:0 auto; padding:16px 24px;
     display:flex; align-items:center; justify-content:space-between;
   }
-  .brand{font-family:'Oswald',sans-serif; font-weight:700; font-size:1.3rem; letter-spacing:0.05em;}
+  .brand{font-family:'Oswald',sans-serif; font-weight:700; font-size:1.3rem; letter-spacing:0.05em; display:flex; align-items:center; gap:10px;}
+  .brand img{ height:38px; width:38px; border-radius:6px; }
   .brand span{color:var(--paint-red-light);}
   .nav-links{display:flex; gap:28px; font-size:0.9rem; font-weight:500;}
   .nav-links a{opacity:0.85; transition:opacity .2s, color .2s;}
@@ -187,9 +189,10 @@
 
 <header>
   <nav>
-    <div class="brand">ADAM'S <span>DETAILS</span></div>
+    <div class="brand"><img src="logo.png" alt="Joly Shine logo">JOLY <span>SHINE</span></div>
     <div class="nav-links">
       <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
       <a href="#gallery">Gallery</a>
       <a href="#area">Service Area</a>
       <a href="#contact">Contact</a>
@@ -199,9 +202,10 @@
 </header>
 
 <section class="hero">
+  <img src="logo.png" alt="Joly Shine" style="width:120px; height:120px; border-radius:16px; margin:0 auto 28px; display:block;">
   <div class="eyebrow">Mobile Detailing · Allen, TX</div>
   <h1>Your car,<br><em>showroom clean</em>, in your driveway.</h1>
-  <p class="lead">Adam's Details brings professional interior and exterior detailing straight to you. No drop-off, no waiting room — just a clean ride when we're done.</p>
+  <p class="lead">Joly Shine brings professional interior and exterior detailing straight to you. No drop-off, no waiting room — just a clean ride when we're done.</p>
   <div class="cta-row">
     <a class="btn btn-primary" href="tel:9452481256">Call to Book — (945) 248-1256</a>
     <a class="btn btn-ghost" href="#services">See Services</a>
@@ -216,36 +220,60 @@
   </div>
   <div class="services-grid">
     <div class="plan">
-      <h3>Express Wash</h3>
-      <div class="price">$45 <small>/ starting</small></div>
+      <h3>Exterior Detail</h3>
+      <div class="price">$50 <small>/ starting</small></div>
       <ul>
         <li>Hand wash & dry</li>
         <li>Wheels & tires cleaned</li>
-        <li>Windows in & out</li>
-        <li>Quick interior vacuum</li>
+        <li>Windows cleaned outside</li>
+        <li>Exterior wax / sealant</li>
+      </ul>
+    </div>
+    <div class="plan">
+      <h3>Interior Detail</h3>
+      <div class="price">$70 <small>/ starting</small></div>
+      <ul>
+        <li>Full interior vacuum</li>
+        <li>Dash, console & door panel detail</li>
+        <li>Interior glass cleaned</li>
+        <li>Leather/upholstery conditioning</li>
       </ul>
     </div>
     <div class="plan featured">
       <span class="tag">Most Popular</span>
       <h3>Full Detail</h3>
-      <div class="price">$120 <small>/ starting</small></div>
+      <div class="price">$115 <small>/ starting</small></div>
       <ul>
-        <li>Everything in Express Wash</li>
-        <li>Deep interior shampoo</li>
-        <li>Dash, console & door panel detail</li>
-        <li>Exterior wax / sealant</li>
-        <li>Leather conditioning</li>
+        <li>Everything in Exterior Detail</li>
+        <li>Everything in Interior Detail</li>
+        <li>Complete inside & out shine</li>
+        <li>Best value — bundled price</li>
       </ul>
     </div>
+  </div>
+  <p style="text-align:center; margin-top:36px; color:var(--chrome); font-size:0.95rem;">
+    ✨ Leave us a review after your detail and get <strong style="color:var(--paint-red-light);">10% off</strong> your next booking.
+  </p>
+</section>
+
+<section id="testimonials">
+  <div class="section-head">
+    <div class="eyebrow">Customer Love</div>
+    <h2>What People Are Saying</h2>
+    <p>Real feedback from real customers around Allen, TX.</p>
+  </div>
+  <div class="services-grid">
     <div class="plan">
-      <h3>Ceramic Coating</h3>
-      <div class="price">$250 <small>/ starting</small></div>
-      <ul>
-        <li>Everything in Full Detail</li>
-        <li>Paint decontamination</li>
-        <li>Ceramic coating application</li>
-        <li>Long-lasting shine & protection</li>
-      </ul>
+      <p style="color:var(--cream); font-style:italic; margin-bottom:18px;">"My car looked brand new when they were done. Super easy to book and they came right to my house."</p>
+      <p style="color:var(--paint-red-light); font-weight:600;">— Sarah M.</p>
+    </div>
+    <div class="plan">
+      <p style="color:var(--cream); font-style:italic; margin-bottom:18px;">"Best detail I've gotten in Allen. Attention to detail was unreal, especially the interior."</p>
+      <p style="color:var(--paint-red-light); font-weight:600;">— Marcus T.</p>
+    </div>
+    <div class="plan">
+      <p style="color:var(--cream); font-style:italic; margin-bottom:18px;">"Friendly, fast, and the mobile setup is so convenient. Will be a repeat customer for sure."</p>
+      <p style="color:var(--paint-red-light); font-weight:600;">— Jenna R.</p>
     </div>
   </div>
 </section>
@@ -284,23 +312,24 @@
       <h3>Contact</h3>
       <p>Based in Allen, TX. Mobile service — we come to you.</p>
       <div class="info-line"><span class="ic">☎</span> <a href="tel:9452481256">(945) 248-1256</a></div>
+      <div class="info-line"><span class="ic">✉</span> <a href="mailto:info@jolyshine.com">info@jolyshine.com</a></div>
       <div class="info-line"><span class="ic">📍</span> Allen, TX & surrounding area</div>
     </div>
     <div>
-      <form action="mailto:?subject=Detailing%20Request" method="get">
+      <form action="mailto:info@jolyshine.com" method="get">
         <input type="text" name="name" placeholder="Your name" required>
         <input type="tel" name="phone" placeholder="Phone number" required>
         <input type="text" name="vehicle" placeholder="Vehicle (make/model)">
         <textarea name="message" placeholder="What do you need detailed?"></textarea>
         <button class="btn btn-primary" type="submit">Send Request</button>
-        <p class="form-note">Business email isn't set up yet — for now, please call (945) 248-1256 to confirm your booking.</p>
+        <p class="form-note">This opens your email app to send the request to info@jolyshine.com. Prefer to talk? Call (945) 248-1256.</p>
       </form>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2026 Adam's Details — Mobile Auto Detailing in Allen, TX
+  © 2026 Joly Shine — Mobile Auto Detailing in Allen, TX
 </footer>
 
 </body>
